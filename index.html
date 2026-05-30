@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maha Fariz - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="images/fav.jpeg">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        body {
+            background-color: #000000; 
+            color: #b3b3b3; 
+            font-family: 'Courier New', monospace;
+            min-height: 100vh;
+            padding-bottom: 70px;
+            padding-top: 50px;
+            overflow-x: hidden;
+        }
+        .logo {
+            font-size: 60px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            padding-left: 9%;
+            padding-bottom: 70px;
+            padding-top: 100px;
+        }
+        .title {
+            font-size: 16px;
+            color: #b3b3b3; 
+            font-family:'Times New Roman', Times, serif;
+            padding-left: 3%;
+            padding-bottom: 30px;
+            padding-top: 40px;
+            display: inline-block;
+            min-height: 24px;
+        }
+        .title::after {
+            content: "_";
+            color: #8b0000;
+            margin-left: 5px;
+            animation: blink-cursor 0.8s infinite;
+        }
+        .first-name, .last-name {
+            color: #8b0000; 
+        }
+        .image {
+            -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+            mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+        }
+        .box {
+            display: flex; 
+            justify-content: space-between;
+            align-items: center;
+            margin-top: -30px;
+            margin-bottom: 50px;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 60px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            padding-left: 5%;
+            padding-right: 5%;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.02);
+            border: 2px solid rgb(107, 101, 106);
+            border-radius: 50px;
+            width: fit-content;
+            margin: 20px auto;
+        }
+        nav ul li a {
+            font-size: larger;
+            color: rgb(218, 218, 218);
+            font-size: 20px;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+            text-decoration: none;
+            background: rgba(233, 231, 231, 0.05);
+            padding: 10px 20px;
+            border: 2px solid rgb(107, 101, 106);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        nav ul li a:hover, nav ul li a.active {
+            color: rgb(10, 10, 10);
+            background: rgb(214, 213, 213);
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
+        }
+        nav ul li a.active {
+            border-color: #8b0000;
+            color: #8b0000;
+            background: rgba(139, 0, 0, 0.1);
+        }
+        p {
+            font-size: 18px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #b3b3b3; 
+            padding-right: 2%;
+            padding-left: 2%;
+            padding-bottom: 50px;
+            padding-top: 15px;
+            text-align: left;
+            line-height: 1.8;
+        }
+        /* Buttons Style with absolute Centering */
+        .btn-11{
+            display: block;
+            font-size: 18px;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+            text-decoration: none;
+            color: rgb(218, 218, 218);
+            width: fit-content;
+            background: rgba(233, 231, 231, 0.05);
+            padding: 10px 20px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 110px;
+            margin-bottom: 100px;
+            border: 3px solid rgb(107, 101, 106);
+            border-radius: 30px;
+            text-align: center;
+            transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
+        }
+        .btn-22 {
+            display: block;
+            font-size: 18px;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+            text-decoration: none;
+            color: rgb(218, 218, 218);
+            width: fit-content;
+            background: rgba(233, 231, 231, 0.05);
+            padding: 10px 20px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 50px;
+            margin-bottom: 100px;
+            border: 3px solid rgb(107, 101, 106);
+            border-radius: 30px;
+            text-align: center;
+            transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
+        }
+        .btn-33 {
+            display: block;
+            font-size: 18px;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+            text-decoration: none;
+            color: rgb(218, 218, 218);
+            width: fit-content;
+            background: rgba(233, 231, 231, 0.05);
+            padding: 10px 20px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: -70px;
+            margin-bottom: 100px;
+            border: 3px solid rgb(107, 101, 106);
+            border-radius: 30px;
+            text-align: center;
+            transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
+        }
+        .btn-44{
+            display: block;
+            font-size: 18px;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+            text-decoration: none;
+            color: rgb(218, 218, 218);
+            width: fit-content;
+            background: rgba(233, 231, 231, 0.05);
+            padding: 10px 20px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 40px;
+            margin-bottom: 100px;
+            border: 3px solid rgb(107, 101, 106);
+            border-radius: 30px;
+            text-align: center;
+            transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
+        }
+        .btn-11:hover, .btn-22:hover, .btn-33:hover, .btn-44:hover {
+            color: rgb(10, 10, 10);
+            background: rgb(214, 213, 213);
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
+        }
+        .logo-2 {
+            font-size: 40px;
+            font-family: 'Courier New', Courier, monospace; 
+            color: #8dd2d2; 
+            padding-left: 3%;
+            padding-top: 20px; 
+            padding-bottom: 60px;
+            display: inline-block;
+            text-shadow: 0 0 10px rgba(141, 210, 210, 0.3);     
+        }
+        .logo-2::after {
+            content: "_";
+            color: #8dd2d2;
+            margin-left: 5px;
+            animation: blink-cursor 0.8s infinite;
+        }
+        @keyframes blink-cursor {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        .box-2 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: -30px;
+            margin-bottom: 10px;
+            gap: 80px;
+            padding-right: 5%;
+            padding-left: 5%;
+        }
+        .hero-text {
+            flex: 1;
+            font-size: 18px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #b3b3b3; 
+            text-align: left;
+            line-height: 1.8;
+        }
+        .hero-name {
+            flex: 1;
+            font-size: clamp(5rem, 11vw, 10rem);  
+            font-family: 'Montserrat', sans-serif;
+            font-weight: bold;
+            color: #8b0000; 
+            padding-left: 3%;
+            padding-bottom: 40px;
+            line-height: 0.8;
+            letter-spacing: -0.04em;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+        }
+        .box-m {
+            display: flex;
+            padding-left: 10%;
+            gap: 50px;
+            margin-top: -50px;
+        }
+        .btn-m , .btn-a {
+            background: rgba(233, 231, 231, 0.05);
+            color: #fff;
+            font-size: 18px;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+            text-decoration: none;
+            width: fit-content;
+            border: 3px solid rgb(107, 101, 106);
+            border-radius: 30px;
+            padding-bottom: 10px;
+            padding-top: 10px;
+            padding-left: 15px;
+            padding-right: 15px;
+            margin-top: -50px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
+        }
+        .btn-m:hover , .btn-a:hover {
+            color: rgb(10, 10, 10);
+            background: rgb(214, 213, 213);
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
+        }
+        .rare {
+            font-size: 30px;
+            font-family: monospace;
+            color: #8b0000; 
+            padding-bottom: 40px;
+            text-align: center;
+            margin-top: -40px;
+        }
+        .cnt {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 45px 65px;
+            width: 100%;
+            max-width: 1500px;
+            margin: -30px auto 80px auto;
+            padding: 0 20px;
+        }
+        .lang, .frame, .tools {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
+        }
+        .lang-item, .frame-item, .tools-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;    
+            padding: 6px 12px;
+            background: transparent;
+            border: none;
+            position: relative;
+            animation: floatAnimation 4s ease-in-out infinite alternate;
+        }
+        .lang-item i, .frame-item i, .tools-item i {
+            font-size: 1.6rem;
+            width: 42px;
+            height: 42px;
+            background-color: #0a0a0a; 
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(128, 128, 128, 0.15);
+            transition: all 0.3s ease;
+        }
+        .lang-item span, .frame-item span, .tools-item span {
+            font-family: 'Courier New', monospace;
+            font-size: 1rem;
+            color: #b3b3b3; 
+            transition: color 0.3s ease;
+        }
+        @keyframes floatAnimation {
+            0% { transform: translateY(0px) rotate(0deg); }
+            100% { transform: translateY(-12px) rotate(1.5deg); }
+        }
+        .lang .lang-item:nth-child(odd) { animation-duration: 4.5s; animation-delay: 0.2s; }
+        .lang .lang-item:nth-child(even) { animation-duration: 3.5s; animation-delay: 0.8s; animation-direction: alternate-reverse; }
+        .frame .frame-item:nth-child(odd) { animation-duration: 5s; animation-delay: 0.5s; }
+        .frame .frame-item:nth-child(even) { animation-duration: 3.8s; animation-delay: 1.2s; animation-direction: alternate-reverse; }
+        .tools .tools-item:nth-child(odd) { animation-duration: 4.2s; animation-delay: 0.3s; }
+        .tools .tools-item:nth-child(even) { animation-duration: 4.8s; animation-delay: 1.5s; animation-direction: alternate-reverse; }
+        .lang-item:hover i, .frame-item:hover i, .tools-item:hover i {
+            background-color: #121212;
+            transform: scale(1.15);
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.25); 
+        }
+        .lang-item:hover span, .frame-item:hover span, .tools-item:hover span {
+            color: #fff; 
+        }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            padding: 0 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .project-card {
+            background-color: #0a0a0a;
+            border: 2px solid rgb(107, 101, 106);
+            border-radius: 15px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease, border-color 0.3s, box-shadow 0.3s;
+        }
+        .project-card:hover {
+            border-color: #8b0000;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(139, 0, 0, 0.15);
+        }
+        .project-info h3 {
+            font-size: 24px;
+            color: #fff;
+            font-family: monospace;
+            margin-bottom: 15px;
+        }
+        .project-info p {
+            font-size: 15px;
+            color: #b3b3b3;
+            padding: 0;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .tech-used {
+            display: block;
+            font-size: 13px;
+            color: #8b0000;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+        }
+        .project-links {
+            display: flex;
+            gap: 20px;
+        }
+        .project-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.3s;
+        }
+        .project-links a:hover {
+            color: #8b0000;
+        }
+        #contact {
+            background-color: #000;
+            color: #fff;
+            padding: 0 8% 60px 8%;
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+        }
+        .contact-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+            margin-top: 20px;
+            width: 100%;
+        }
+        .contact-left {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
+        }
+        .contact-title {
+            font-size: 30px;
+            font-family: monospace;
+            color: #8b0000; 
+            padding-bottom: 10px;
+            margin: 0;
+        }
+        .contact-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            width: 100%;
+            max-width: 350px;
+        }
+        .card {
+            background-color: #0a0a0a;
+            border: 1px solid #1a1a1a;
+            border-radius: 6px;
+            padding: 14px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-decoration: none;
+            transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.3s, background-color 0.3s;
+        }
+        .card:hover {
+            border-color: #8b0000;
+            background-color: #111;
+        }
+        .card-title {
+            color: #fff;
+            font-size: 13px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            letter-spacing: 1px;
+        }
+        .card-title i {
+            font-size: 16px;
+            color: #b3b3b3;
+        }
+        .card:hover .card-title i {
+            color: #8b0000;
+        }
+        .card-info {
+            color: #666;
+            font-size: 13px;
+        }
+        .contact-right {
+            flex: 1;
+            text-align: right;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+        .big-thank {
+            font-size: 80px;
+            font-weight: 900;
+            line-height: 1;
+            margin: 0;
+            color: #fff;
+            letter-spacing: 2px;
+        }
+        .big-year {
+            font-size: 75px;
+            font-weight: 300;
+            color: transparent;
+            -webkit-text-stroke: 1px #333;
+            line-height: 1;
+            margin-top: 10px;
+        }
+        .freelance-status {
+            color: #555;
+            font-size: 14px;
+            margin-top: 30px;
+            letter-spacing: 1px;
+        }
+        @media (max-width: 900px) {
+            .contact-container {
+                flex-direction: column-reverse;
+                gap: 50px;
+            }
+            .contact-left {
+                align-items: center;
+                width: 100%;
+            }
+            .contact-right {
+                align-items: center;
+                text-align: center;
+            }
+            .big-thank { font-size: 55px; }
+            .big-year { font-size: 50px; }
+        }
+        .box-up {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+        #backToTopBtn {
+            font-size: 18px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: #fff;
+            background: rgba(233, 231, 231, 0.05);
+            border: 3px solid rgb(107, 101, 106);
+            border-radius: 30px;
+            padding: 10px 25px;
+            cursor: pointer;
+            transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
+        }
+        #backToTopBtn:hover {
+            color: rgb(10, 10, 10);
+            background: rgb(214, 213, 213);
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
+        }
+        .fade-element {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-element.reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <section id="home">
+        <header>
+            <div class="box">
+                <div class="logo">
+                    <h1 class="name"><span class="first-name">Maha</span> <span class="last-name">Fariz</span></h1>
+                    <p class="title" id="typing-title"></p>
+                </div>
+                <div class="image">
+                    <img src="images/pic-0.png">
+                </div>
+            </div>
+            <div class="box-m">
+                <a href="#contact" class="btn-m">Contact Me</a>
+                <a href="CV_MAHA_FARIZ.pdf" class="btn-a" target="_blank">View My CV</a>
+            </div>
+        </header>
+        <a href="#profile" class="btn-11">View My Profile</a>
+    </section>
+    <section id="profile">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#home">HOME</a></li>
+                    <li><a href="#profile">PROFILE</a></li>
+                    <li><a href="#stack">STACK</a></li>
+                    <li><a href="#projects">PROJECTS</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                </ul>
+            </nav>
+            <h1 class="logo-2"></h1>
+        </header>
+        <div class="box-2">
+            <div class="b1">
+                 <h2 class="hero-name">MAHA <br> FARIZ</h2>
+            </div>
+            <div class="b2">
+                <p class="hero-text">I am a passionate First-year Applied Computer Science student and an aspiring Software Engineer with a strong focus on Modern Web Development. I specialize in building responsive and efficient digital experiences using a mix of logic and creativity. With a solid foundation in algorithms and programming languages like C and Python, I dedicated most of my time to mastering web technologies and crafting clean, functional code. I am always driven by curiosity, whether I’m diving into cybersecurity or exploring the latest trends in the tech world.</p>
+            </div>
+        </div>
+        <a href="#stack" class="btn-22">View My Stack</a>
+    </section>
+    <section id="stack">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#home">HOME</a></li>
+                    <li><a href="#profile">PROFILE</a></li>
+                    <li><a href="#stack">STACK</a></li>
+                    <li><a href="#projects">PROJECTS</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                </ul>
+            </nav>
+            <h1 class="logo-2"></h1>
+        </header>
+        <h2 class="rare fade-element">My Tech Stack</h2>
+        <div class="cnt">
+            <div class="lang">
+                <div class="lang-item"><i class="devicon-c-plain colored"></i><span>C</span></div>
+                <div class="lang-item"><i class="devicon-python-plain colored"></i><span>Python</span></div>
+                <div class="lang-item"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></div>
+                <div class="lang-item"><i class="devicon-php-plain colored"></i><span>PHP</span></div>
+                <div class="lang-item"><i class="devicon-csharp-plain colored"></i><span>CSharp</span></div>
+                <div class="lang-item"><i class="devicon-java-plain colored"></i><span>Java</span></div>
+                <div class="lang-item"><i class="devicon-html5-plain colored"></i><span>HTML</span></div>
+                <div class="lang-item"><i class="devicon-css3-plain colored"></i><span>CSS</span></div>
+            </div>
+            <div class="frame">
+                <div class="frame-item"><i class="devicon-angularjs-plain colored"></i><span>AngularJS</span></div>
+                <div class="frame-item"><i class="devicon-spring-original colored"></i><span>Spring Boot</span></div>  
+                <div class="frame-item"><i class="devicon-flask-original colored"></i><span>Flask</span></div>
+                <div class="frame-item"><i class="devicon-laravel-original colored"></i><span>Laravel</span></div>
+                <div class="frame-item"><i class="devicon-bootstrap-plain colored"></i><span>Bootstrap</span></div>
+                <div class="frame-item"><i class="devicon-azure-plain colored"></i><span>Azure</span></div>
+                <div class="frame-item"><i class="devicon-dot-net-plain colored"></i><span>.NET</span></div>
+            </div>
+            <div class="tools">
+                <div class="tools-item"><i class="devicon-git-plain colored"></i><span>Git</span></div>
+                <div class="tools-item"><i class="devicon-github-plain colored"></i><span>Github</span></div>
+                <div class="tools-item"><i class="devicon-vscode-plain colored"></i><span>VS Code</span></div>
+                <div class="tools-item"><i class="devicon-vercel-original colored"></i><span>Vercel</span></div>
+                <div class="tools-item"><i class="devicon-figma-plain colored"></i><span>Figma</span></div>
+                <div class="tools-item"><i class="devicon-docker-plain colored"></i><span>Docker</span></div>
+                <div class="tools-item"><i class="devicon-fastapi-plain colored"></i><span>FastAPI</span></div>
+                <div class="tools-item"><i class="devicon-photoshop-plain colored"></i><span>Adobe Photoshop</span></div>
+                <div class="tools-item"><i class="devicon-amazonwebservices-plain-wordmark colored"></i><span>Aws</span></div>
+            </div>
+        </div>
+        <a href="#projects" class="btn-33">View My Projects</a>
+    </section>
+    <section id="projects">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#home">HOME</a></li>
+                    <li><a href="#profile">PROFILE</a></li>
+                    <li><a href="#stack">STACK</a></li>
+                    <li><a href="#projects">PROJECTS</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                </ul>
+            </nav>
+            <h1 class="logo-2"></h1>
+        </header>
+        <h2 class="rare fade-element">My Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card fade-element">
+                <div class="project-info">
+                    <h3>Next Agency Website</h3>
+                    <p>A professional corporate website developed for a digital agency, focusing on modern aesthetics, high performance, and smooth navigation.</p>
+                    <span class="tech-used">HTML • CSS • JavaScript</span>
+                </div>
+            </div>
+            <div class="project-card fade-element">
+                <div class="project-info">
+                    <h3>Easy HTML & CSS Course</h3>
+                    <p>A sleek, minimalist landing page crafted for my upcoming Udemy programming course. Designed to highlight curriculum structure and maximize user engagement.</p>
+                    <span class="tech-used">HTML • CSS • Web Design</span>
+                </div>
+            </div>
+            <div class="project-card fade-element">
+                <div class="project-info">
+                    <h3>Developer Portfolio</h3>
+                    <p>My personal minimalist and aesthetic portfolio. Built completely from scratch to showcase my stack, academic projects, and web engineering progress.</p>
+                    <span class="tech-used">HTML • CSS Grid • Responsive UI</span>
+                </div>
+            </div>
+        </div>
+        <a href="#contact" class="btn-44">Contact Me</a>
+    </section>
+    <section id="contact">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#home">HOME</a></li>
+                    <li><a href="#profile">PROFILE</a></li>
+                    <li><a href="#stack">STACK</a></li>
+                    <li><a href="#projects">PROJECTS</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                </ul>
+            </nav>
+            <h1 class="logo-2"></h1>
+        </header>
+        <div class="contact-container">
+            <div class="contact-left">
+                <h2 class="contact-title fade-element">CONTACT ME</h2>
+                <div class="contact-cards">
+                    <a href="https://github.com/meha-18" target="_blank" class="card fade-element">
+                        <div class="card-title"><i class="fa-brands fa-github"></i> GITHUB</div>
+                        <div class="card-info">github.com/meha-18</div>
+                    </a>
+                    <a href="https://wa.me/212625836175" target="_blank" class="card fade-element">
+                        <div class="card-title"><i class="fa-brands fa-whatsapp"></i> WHATSAPP</div>
+                        <div class="card-info">+212 625 836 175</div>
+                    </a>
+                    <a href="mailto:mahafariz20@gmail.com" class="card fade-element">
+                        <div class="card-title"><i class="fa-solid fa-envelope"></i> G-MAIL</div>
+                        <div class="card-info">mahafariz20@gmail.com</div>
+                    </a>
+                    <a href="https://www.linkedin.com/in/maha-fariz" target="_blank" class="card fade-element">
+                        <div class="card-title"><i class="fa-brands fa-linkedin-in"></i> LINKEDIN</div>
+                        <div class="card-info">Maha Fariz</div>
+                    </a>
+                </div>
+            </div>
+            <div class="contact-right">
+                <h1 class="big-thank fade-element">THANK YOU</h1>
+                <div class="big-year">2026</div>
+                <div class="freelance-status">Open to freelance • Collaboration • Long-term</div>
+            </div>
+        </div>
+        <div class="box-up">
+            <button id="backToTopBtn" onclick="window.scrollTo(0, 0);" title="Go to top">Back To Top ↑</button>
+        </div>
+    </section>
+    <script>
+        // Feature 1: Navigation Active Link Indicator on Scroll
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll("nav ul li a");
+        window.addEventListener("scroll", () => {
+            let currentSectionId = "";
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop;
+                if (window.pageYOffset >= sectionTop - 150) {
+                    currentSectionId = section.getAttribute("id");
+                }
+            });
+            navLinks.forEach((link) => {
+                link.classList.remove("active");
+                if (link.getAttribute("href").includes(currentSectionId)) {
+                    link.classList.add("active");
+                }
+            });
+        });
+        // Feature 2: Reveal Elements Dynamically on Scroll (Fade-In System)
+        const revealOnScrollObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal');
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-element').forEach((element) => {
+            revealOnScrollObserver.observe(element);
+        });
+        // Feature 3: Auto Typing and Deleting Effect for "> MF" Logos
+        const textToTypeLogo = "> MF";
+        const typingLogos = document.querySelectorAll(".logo-2");
+        let logoCharIndex = 0;
+        let isLogoDeleting = false;
+        function typeLogoEffect() {
+            const currentText = isLogoDeleting 
+                ? textToTypeLogo.substring(0, logoCharIndex - 1) 
+                : textToTypeLogo.substring(0, logoCharIndex + 1);
+            typingLogos.forEach(logo => {
+                logo.textContent = currentText;
+            });
+            if (!isLogoDeleting && currentText === textToTypeLogo) {
+                setTimeout(() => isLogoDeleting = true, 1500);
+            } else if (isLogoDeleting && currentText === "") {
+                isLogoDeleting = false;
+                logoCharIndex = 0;
+                setTimeout(typeLogoEffect, 500);
+                return;
+            }
+            logoCharIndex = isLogoDeleting ? logoCharIndex - 1 : logoCharIndex + 1;
+            setTimeout(typeLogoEffect, isLogoDeleting ? 100 : 200);
+        }
+        // Feature 4: Auto Typing and Deleting Effect for the Main Home Title
+        const titleText = "Computer Science Student | Junior Full-Stack Developer | Future Software Engineer";
+        const titleElement = document.getElementById("typing-title");
+        let titleCharIndex = 0;
+        let isTitleDeleting = false;
+        function typeTitleEffect() {
+            const currentTitleText = isTitleDeleting 
+                ? titleText.substring(0, titleCharIndex - 1) 
+                : titleText.substring(0, titleCharIndex + 1);
+            titleElement.textContent = currentTitleText;
+            if (!isTitleDeleting && currentTitleText === titleText) {
+                setTimeout(() => isTitleDeleting = true, 3000); 
+            } else if (isTitleDeleting && currentTitleText === "") {
+                isTitleDeleting = false;
+                titleCharIndex = 0;
+                setTimeout(typeTitleEffect, 500);
+                return;
+            }
+            titleCharIndex = isTitleDeleting ? titleCharIndex - 1 : titleCharIndex + 1;
+            setTimeout(typeTitleEffect, isTitleDeleting ? 30 : 60); 
+        }
+        // Magnetic Buttons Physics Effect (Perfect Center Bounds)
+        const magneticElements = document.querySelectorAll(".btn-11, .btn-22, .btn-33, .btn-m, .btn-a, .card, #backToTopBtn");
+        magneticElements.forEach(elem => {
+            elem.addEventListener("mousemove", (e) => {
+                const rect = elem.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                elem.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+            });
+            elem.addEventListener("mouseleave", () => {
+                elem.style.transform = "translate(0px, 0px)";
+            });
+        });
+        // Initialize script logic executions
+        document.addEventListener("DOMContentLoaded", () => {
+            typeLogoEffect();
+            typeTitleEffect();
+        });
+    </script>
+</body>
+</html>
