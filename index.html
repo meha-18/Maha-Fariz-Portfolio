@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@900&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="images/fav.jpeg">
     <style>
+        /*  GLOBAL STYLES  */
         * {
             margin: 0;
             padding: 0;
@@ -25,9 +26,17 @@
             font-family: 'Courier New', monospace;
             min-height: 100vh;
             padding-bottom: 70px;
-            padding-top: 50px;
             overflow-x: hidden;
         }
+        /*  NAVBAR SPACER  */
+        .navbar-spacer {
+            height: 0;
+            transition: height 0.3s ease;
+        }
+        .navbar-spacer.active {
+            height: 70px;
+        }
+        /*  HOME SECTION STYLES  */
         .logo {
             font-size: 60px;
             font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -65,6 +74,24 @@
             margin-top: -30px;
             margin-bottom: 50px;
         }
+        /* FIXED NAVBAR STYLES  */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000; 
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            background: rgba(0, 0, 0, 0);
+            transition: all 0.3s ease;
+            border-bottom: 2px solid transparent;
+        }
+        nav.scrolled {
+            background: rgba(0, 0, 0, 0.7);
+            border-bottom-color: rgb(107, 101, 106);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
         nav ul {
             display: flex;
             list-style: none;
@@ -79,7 +106,12 @@
             border: 2px solid rgb(107, 101, 106);
             border-radius: 50px;
             width: fit-content;
-            margin: 20px auto;
+            margin: 0 auto;
+            transition: all 0.3s ease;
+        }
+        nav.scrolled ul {
+            background: rgba(255, 255, 255, 0.03);
+            border-color: rgb(107, 101, 106);
         }
         nav ul li a {
             font-size: larger;
@@ -103,6 +135,7 @@
             color: #8b0000;
             background: rgba(139, 0, 0, 0.1);
         }
+        /*  GENERAL TEXT STYLES  */
         p {
             font-size: 18px;
             font-family: Arial, Helvetica, sans-serif;
@@ -114,8 +147,8 @@
             text-align: left;
             line-height: 1.8;
         }
-        /* Buttons Style with absolute Centering */
-        .btn-11{
+        /*  BUTTON STYLES  */
+        .btn-11, .btn-22, .btn-33, .btn-44 {
             display: block;
             font-size: 18px;
             font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
@@ -128,78 +161,21 @@
             padding-bottom: 15px;
             margin-left: auto;
             margin-right: auto;
-            margin-top: 110px;
-            margin-bottom: 100px;
             border: 3px solid rgb(107, 101, 106);
             border-radius: 30px;
             text-align: center;
             transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
         }
-        .btn-22 {
-            display: block;
-            font-size: 18px;
-            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
-            text-decoration: none;
-            color: rgb(218, 218, 218);
-            width: fit-content;
-            background: rgba(233, 231, 231, 0.05);
-            padding: 10px 20px;
-            padding-top: 15px;
-            padding-bottom: 15px;
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: 50px;
-            margin-bottom: 100px;
-            border: 3px solid rgb(107, 101, 106);
-            border-radius: 30px;
-            text-align: center;
-            transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
-        }
-        .btn-33 {
-            display: block;
-            font-size: 18px;
-            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
-            text-decoration: none;
-            color: rgb(218, 218, 218);
-            width: fit-content;
-            background: rgba(233, 231, 231, 0.05);
-            padding: 10px 20px;
-            padding-top: 15px;
-            padding-bottom: 15px;
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: -70px;
-            margin-bottom: 100px;
-            border: 3px solid rgb(107, 101, 106);
-            border-radius: 30px;
-            text-align: center;
-            transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
-        }
-        .btn-44{
-            display: block;
-            font-size: 18px;
-            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
-            text-decoration: none;
-            color: rgb(218, 218, 218);
-            width: fit-content;
-            background: rgba(233, 231, 231, 0.05);
-            padding: 10px 20px;
-            padding-top: 15px;
-            padding-bottom: 15px;
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: 40px;
-            margin-bottom: 100px;
-            border: 3px solid rgb(107, 101, 106);
-            border-radius: 30px;
-            text-align: center;
-            transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
-        }
+        .btn-11 { margin-top: 110px; margin-bottom: 100px; }
+        .btn-22 { margin-top: 50px; margin-bottom: 100px; }
+        .btn-33 { margin-top: -70px; margin-bottom: 100px; }
+        .btn-44 { margin-top: 40px; margin-bottom: 100px; }
         .btn-11:hover, .btn-22:hover, .btn-33:hover, .btn-44:hover {
             color: rgb(10, 10, 10);
             background: rgb(214, 213, 213);
             box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
         }
+        /*  SECTION HEADERS  */
         .logo-2 {
             font-size: 40px;
             font-family: 'Courier New', Courier, monospace; 
@@ -220,6 +196,7 @@
             0%, 100% { opacity: 1; }
             50% { opacity: 0; }
         }
+        /*  PROFILE SECTION  */
         .box-2 {
             display: flex;
             justify-content: space-between;
@@ -237,6 +214,7 @@
             color: #b3b3b3; 
             text-align: left;
             line-height: 1.8;
+            padding-bottom: 0px; /* Adjusted to balance with read more btn */
         }
         .hero-name {
             flex: 1;
@@ -250,6 +228,33 @@
             letter-spacing: -0.04em;
             text-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
         }
+        /*  READ MORE FEATURE STYLES  */
+        .more-text {
+            display: none;
+        }
+        .more-text.show {
+            display: inline;
+        }
+        .read-more-btn {
+            display: inline-block;
+            background: transparent;
+            color: #8b0000;
+            border: 2px solid #8b0000;
+            padding: 8px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            font-family: monospace;
+            font-size: 14px;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+        .read-more-btn:hover {
+            background: #8b0000;
+            color: #fff;
+            box-shadow: 0 0 15px rgba(139, 0, 0, 0.4);
+        }
+        /*  HOME BUTTONS  */
         .box-m {
             display: flex;
             padding-left: 10%;
@@ -280,6 +285,7 @@
             background: rgb(214, 213, 213);
             box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
         }
+        /*  SECTION TITLES  */
         .rare {
             font-size: 30px;
             font-family: monospace;
@@ -288,6 +294,7 @@
             text-align: center;
             margin-top: -40px;
         }
+        /*  TECH STACK SECTION  */
         .cnt {
             display: flex;
             flex-wrap: wrap;
@@ -350,6 +357,7 @@
         .lang-item:hover span, .frame-item:hover span, .tools-item:hover span {
             color: #fff; 
         }
+        /* PROJECTS SECTION */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -411,6 +419,7 @@
         .project-links a:hover {
             color: #8b0000;
         }
+        /* CONTACT SECTION */
         #contact {
             background-color: #000;
             color: #fff;
@@ -528,6 +537,7 @@
             .big-thank { font-size: 55px; }
             .big-year { font-size: 50px; }
         }
+        /* BACK TO TOP BUTTON */
         .box-up {
             display: flex;
             justify-content: center;
@@ -551,6 +561,7 @@
             background: rgb(214, 213, 213);
             box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
         }
+        /* FADE IN ANIMATIONS  */
         .fade-element {
             opacity: 0;
             transform: translateY(30px);
@@ -560,9 +571,73 @@
             opacity: 1;
             transform: translateY(0);
         }
+        /* RESPONSIVE MOBILE STYLES */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 0;
+            }
+            .navbar-spacer.active {
+                height: 60px;
+            }
+            .box, .box-2, .box-m {
+                flex-direction: column;
+                padding-left: 5% !important;
+                padding-right: 5% !important;
+                text-align: center;
+                margin-top: 20px;
+            }
+            .b2 {
+                width: 100%;
+            }
+            .hero-text {
+                width: 100%;
+                text-align: center;
+                padding-left: 0;
+                padding-right: 0;
+            }
+            .logo {
+                padding-left: 0;
+                font-size: 40px;
+                padding-top: 40px;
+                padding-bottom: 30px;
+            }
+            .hero-name {
+                font-size: 3rem;
+                padding-left: 0;
+                padding-bottom: 20px;
+            }
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+                width: 90%;
+            }
+            nav.scrolled ul {
+                gap: 12px;
+            }
+            nav ul li a {
+                font-size: 16px;
+                padding: 8px 16px;
+            }
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            .contact-container {
+                flex-direction: column;
+            }
+            #typing-title {
+                font-size: 1.2rem !important;
+                white-space: normal !important;
+                word-break: break-word !important;
+            }
+            .btn-11, .btn-22, .btn-33, .btn-44, .btn-m, .btn-a, .card, #backToTopBtn {
+                transform: none !important;
+                transition: transform 0.2s ease, background-color 0.3s !important;
+            }
+        }
     </style>
 </head>
 <body>
+    <div class="navbar-spacer"></div> 
     <section id="home">
         <header>
             <div class="box">
@@ -581,17 +656,17 @@
         </header>
         <a href="#profile" class="btn-11">View My Profile</a>
     </section>
+    <nav>
+        <ul>
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#profile">PROFILE</a></li>
+            <li><a href="#stack">STACK</a></li>
+            <li><a href="#projects">PROJECTS</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+        </ul>
+    </nav>
     <section id="profile">
         <header>
-            <nav>
-                <ul>
-                    <li><a href="#home">HOME</a></li>
-                    <li><a href="#profile">PROFILE</a></li>
-                    <li><a href="#stack">STACK</a></li>
-                    <li><a href="#projects">PROJECTS</a></li>
-                    <li><a href="#contact">CONTACT</a></li>
-                </ul>
-            </nav>
             <h1 class="logo-2"></h1>
         </header>
         <div class="box-2">
@@ -599,22 +674,17 @@
                  <h2 class="hero-name">MAHA <br> FARIZ</h2>
             </div>
             <div class="b2">
-                <p class="hero-text">I am a passionate First-year Applied Computer Science student and an aspiring Software Engineer with a strong focus on Modern Web Development. I specialize in building responsive and efficient digital experiences using a mix of logic and creativity. With a solid foundation in algorithms and programming languages like C and Python, I dedicated most of my time to mastering web technologies and crafting clean, functional code. I am always driven by curiosity, whether I’m diving into cybersecurity or exploring the latest trends in the tech world.</p>
+                <p class="hero-text">
+                    I am a passionate First-year Applied Computer Science student and an aspiring Software Engineer with a strong focus on Modern Web Development. 
+                    <span class="more-text">I specialize in building responsive and efficient digital experiences using a mix of logic and creativity. With a solid foundation in algorithms and programming languages like C and Python, I dedicated most of my time to mastering web technologies and crafting clean, functional code. I am always driven by curiosity, whether I'm diving into cybersecurity or exploring the latest trends in the tech world.</span>
+                    <br><button class="read-more-btn">Read More</button>
+                </p>
             </div>
         </div>
         <a href="#stack" class="btn-22">View My Stack</a>
     </section>
     <section id="stack">
         <header>
-            <nav>
-                <ul>
-                    <li><a href="#home">HOME</a></li>
-                    <li><a href="#profile">PROFILE</a></li>
-                    <li><a href="#stack">STACK</a></li>
-                    <li><a href="#projects">PROJECTS</a></li>
-                    <li><a href="#contact">CONTACT</a></li>
-                </ul>
-            </nav>
             <h1 class="logo-2"></h1>
         </header>
         <h2 class="rare fade-element">My Tech Stack</h2>
@@ -654,15 +724,6 @@
     </section>
     <section id="projects">
         <header>
-            <nav>
-                <ul>
-                    <li><a href="#home">HOME</a></li>
-                    <li><a href="#profile">PROFILE</a></li>
-                    <li><a href="#stack">STACK</a></li>
-                    <li><a href="#projects">PROJECTS</a></li>
-                    <li><a href="#contact">CONTACT</a></li>
-                </ul>
-            </nav>
             <h1 class="logo-2"></h1>
         </header>
         <h2 class="rare fade-element">My Projects</h2>
@@ -693,15 +754,6 @@
     </section>
     <section id="contact">
         <header>
-            <nav>
-                <ul>
-                    <li><a href="#home">HOME</a></li>
-                    <li><a href="#profile">PROFILE</a></li>
-                    <li><a href="#stack">STACK</a></li>
-                    <li><a href="#projects">PROJECTS</a></li>
-                    <li><a href="#contact">CONTACT</a></li>
-                </ul>
-            </nav>
             <h1 class="logo-2"></h1>
         </header>
         <div class="contact-container">
@@ -737,7 +789,17 @@
         </div>
     </section>
     <script>
-        // Feature 1: Navigation Active Link Indicator on Scroll
+        const navbar = document.querySelector("nav");
+        const navbarSpacer = document.querySelector(".navbar-spacer");
+        window.addEventListener("scroll", () => {
+            if (window.pageYOffset > 50) {
+                navbar.classList.add("scrolled");
+                navbarSpacer.classList.add("active");
+            } else {
+                navbar.classList.remove("scrolled");
+                navbarSpacer.classList.remove("active");
+            }
+        });
         const sections = document.querySelectorAll("section");
         const navLinks = document.querySelectorAll("nav ul li a");
         window.addEventListener("scroll", () => {
@@ -755,7 +817,6 @@
                 }
             });
         });
-        // Feature 2: Reveal Elements Dynamically on Scroll (Fade-In System)
         const revealOnScrollObserver = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
@@ -766,7 +827,6 @@
         document.querySelectorAll('.fade-element').forEach((element) => {
             revealOnScrollObserver.observe(element);
         });
-        // Feature 3: Auto Typing and Deleting Effect for "> MF" Logos
         const textToTypeLogo = "> MF";
         const typingLogos = document.querySelectorAll(".logo-2");
         let logoCharIndex = 0;
@@ -789,7 +849,6 @@
             logoCharIndex = isLogoDeleting ? logoCharIndex - 1 : logoCharIndex + 1;
             setTimeout(typeLogoEffect, isLogoDeleting ? 100 : 200);
         }
-        // Feature 4: Auto Typing and Deleting Effect for the Main Home Title
         const titleText = "Computer Science Student | Junior Full-Stack Developer | Future Software Engineer";
         const titleElement = document.getElementById("typing-title");
         let titleCharIndex = 0;
@@ -810,20 +869,31 @@
             titleCharIndex = isTitleDeleting ? titleCharIndex - 1 : titleCharIndex + 1;
             setTimeout(typeTitleEffect, isTitleDeleting ? 30 : 60); 
         }
-        // Magnetic Buttons Physics Effect (Perfect Center Bounds)
         const magneticElements = document.querySelectorAll(".btn-11, .btn-22, .btn-33, .btn-m, .btn-a, .card, #backToTopBtn");
-        magneticElements.forEach(elem => {
-            elem.addEventListener("mousemove", (e) => {
-                const rect = elem.getBoundingClientRect();
-                const x = e.clientX - rect.left - rect.width / 2;
-                const y = e.clientY - rect.top - rect.height / 2;
-                elem.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+        if (window.innerWidth > 768) {
+            magneticElements.forEach(elem => {
+                elem.addEventListener("mousemove", (e) => {
+                    const rect = elem.getBoundingClientRect();
+                    const x = e.clientX - rect.left - rect.width / 2;
+                    const y = e.clientY - rect.top - rect.height / 2;
+                    elem.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+                });
+                elem.addEventListener("mouseleave", () => {
+                    elem.style.transform = "translate(0px, 0px)";
+                });
             });
-            elem.addEventListener("mouseleave", () => {
-                elem.style.transform = "translate(0px, 0px)";
-            });
+        }
+        /*  FEATURE 6: READ MORE / LESS LOGIC  */
+        const readMoreBtn = document.querySelector('.read-more-btn');
+        const moreText = document.querySelector('.more-text');
+        readMoreBtn.addEventListener('click', () => {
+            moreText.classList.toggle('show');
+            if (moreText.classList.contains('show')) {
+                readMoreBtn.textContent = 'Read Less';
+            } else {
+                readMoreBtn.textContent = 'Read More';
+            }
         });
-        // Initialize script logic executions
         document.addEventListener("DOMContentLoaded", () => {
             typeLogoEffect();
             typeTitleEffect();
